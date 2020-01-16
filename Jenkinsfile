@@ -4,6 +4,7 @@ pipeline {
     stage('clone project') {
               steps {
                bat "echo Helloworls"
+               bat" dir"
               }
     }
     
