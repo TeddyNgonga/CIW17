@@ -1,11 +1,20 @@
 pipeline {
   agent any 
   stages {
-    stage('clone project') {
+    stage('Maven: clean project') {
               steps {
-               bat "echo Helloworls"
-               bat" dir"
+               bat "mvn clean"
               }
+    }
+	stage('Maven: build project') {
+              steps {
+               bat "mvn install"
+              }
+    }
+	stage('Maven: test project') {
+              steps {
+               bat "mvn test"
+            }
     }
     
   }
