@@ -1,24 +1,38 @@
 pipeline {
   agent any 
+      tools { 
+        maven 'maven' 
+    }
+	
   stages {
+					
+				
     stage('Maven: clean project') {
               steps {
-               bat """
-			   dir 
-			   C:\\Program Files\\apache-maven-3.6.3-bin\\apache-maven-3.6.3\\bin\\mvn clean
-			   
-			   """
+				bat """cd "C:\\Users\\212610402\\eclipse-workspace\\CI_W17" 
+
+				mvn clean
+                
+                """
               }
     }
-	stage('Maven: build project') {
+	stage('Maven: package project') {
               steps {
-               bat "C:\\Program Files\\apache-maven-3.6.3-bin\\apache-maven-3.6.3\\bin\\mvn install"
+				bat """
+
+				mvn package
+                
+                """
               }
     }
 	stage('Maven: test project') {
               steps {
-               bat "C:\\Program Files\\apache-maven-3.6.3-bin\\apache-maven-3.6.3\\bin\\mvn test"
-            }
+				bat """
+
+				mvn test
+                
+                """
+              }
     }
     
   }
