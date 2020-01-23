@@ -34,6 +34,19 @@ pipeline {
                 """
               }
     }
+    stage('push back'){
+
+      checkout(
+
+[$class: 'GitSCM', branches: [
+					[name: '*/master']],
+					doGenerateSubmoduleConfigurations: false, 
+					extensions: [], 
+					submoduleCfg: [], 
+					userRemoteConfigs: [
+					[credentialsId: '83ce4725-8966-455e-b7d5-47c6a4a5222b', 
+					url: 'https://github.com/20chix/CIW17']]])
+    }
     
   }
 }
