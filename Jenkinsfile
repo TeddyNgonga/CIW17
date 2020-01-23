@@ -34,6 +34,8 @@ pipeline {
                 """
               }
     }
+
+    
     stage('push back'){
 
          steps {
@@ -56,5 +58,14 @@ emailext body: 'dwdwdw', subject: 'dwdwd', to: 'hadi20107@hotmail.co.uk'
     }
     }
   }
+
+      post {
+        always {
+           // archiveArtifacts artifacts: 'build/libs/**/*.jar', fingerprint: true
+            junit 'target//surefire-reports/*.xml'
+        }
+    }
+
+
 }
 
