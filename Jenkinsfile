@@ -50,7 +50,7 @@ pipeline {
 					url: 'https://github.com/20chix/CIW17']]])
     
     
-emailext body: 'dwdwdw', subject: 'dwdwd', to: 'hadi.elmekawi@ge.com' 
+emailext body: 'dwdwdw', subject: 'dwdwd', to: 'hadi.elme92@gmail.com' 
 
 
     }
