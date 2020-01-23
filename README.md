@@ -4,4 +4,4 @@
 
 
 
-[![Build Status](http://localhost:8080/job/CI-W17/badge/icon)](http://localhost:8080/job/CI-W17/)
+[![Build Status](http://localhost:8080/buildStatus/icon?job=CI-W17)](http://localhost:8080/job/CI-W17/)
