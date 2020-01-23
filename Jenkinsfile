@@ -48,6 +48,11 @@ pipeline {
 					userRemoteConfigs: [
 					[credentialsId: '83ce4725-8966-455e-b7d5-47c6a4a5222b', 
 					url: 'https://github.com/20chix/CIW17']]])
+    
+    
+emailext body: 'dwdwdw', subject: 'dwdwd', to: 'hadi.elmekawi@ge.com' 
+
+
     }
     }
   }
