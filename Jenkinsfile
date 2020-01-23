@@ -34,8 +34,7 @@ pipeline {
                 """
               }
     }
-	  checkout(
-
+	  
 checkout(
 
 [$class: 'GitSCM', branches: [
