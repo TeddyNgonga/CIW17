@@ -44,28 +44,11 @@ pipeline {
             from: 'hadi.elme92@gmail.com', 
             mimeType: 'text/html', 
             replyTo: '', 
-            subject: "EDISON CI W17 : JOB Name -> ${env.JOB_NAME}", 
+            subject: "EDISON ${env.JOB_NAME} Build Number: ${env.BUILD_NUMBER} ", 
             to: "hadi.elme92@gmail.com";  
 
         }
     }
-
-
-    stage('push_git'){
-
-          steps{
-
-      withCredentials([
-              [$class: 'UsernamePasswordMultiBinding', 
-              credentialsId: 'githubtest', 
-              usernameVariable: '20chix',
-              passwordVariable: 'dip2chill']]) {
-      bat"git push https://github.com/20chix/CIW17"
-        }
-          }
-
-      }
-
 
 
 
