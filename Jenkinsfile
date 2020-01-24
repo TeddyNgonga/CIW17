@@ -51,22 +51,32 @@ pipeline {
     }
 
 
-  
+    stage('push_git'){
 
-    //   stage('push_git'){
+          steps{
 
-    //       steps{
+      withCredentials([
+              [$class: 'UsernamePasswordMultiBinding', 
+              credentialsId: 'githubtest', 
+              usernameVariable: '20chix',
+              passwordVariable: 'dip2chill']]) {
+      bat"git push https://github.com/20chix/CIW17"
+        }
+          }
 
-    //   withCredentials([
-    //           [$class: 'UsernamePasswordMultiBinding', 
-    //           credentialsId: 'githubtest', 
-    //           usernameVariable: '20chix',
-    //           passwordVariable: 'dip2chill']]) {
-    //   bat"git push https://github.com/20chix/CIW17"
-    //     }
-    //       }
+      }
 
-    //   }
+
+
+
+
+
+
+
+
+  }
+
+
       post {
         always {
            // archiveArtifacts artifacts: 'build/libs/**/*.jar', fingerprint: true
@@ -79,6 +89,6 @@ pipeline {
         }
     }
 
-  }
+
 }
 
