@@ -34,37 +34,37 @@ pipeline {
                 """
               }
     }
+    stage('Send email notification'){
+        steps{
 
-    
-    stage('push back'){
+            mail bcc: '', 
+            body: "<b>Edison CI project </b><br>Project: ${env.JOB_NAME} <br>Build Number: ${env.BUILD_NUMBER} <br> URL for build: ${env.BUILD_URL}", 
+            cc: '', 
+            charset: 'UTF-8', 
+            from: 'hadi.elme92@gmail.com', 
+            mimeType: 'text/html', 
+            replyTo: '', 
+            subject: "EDISON CI W17 : JOB Name -> ${env.JOB_NAME}", 
+            to: "hadi.elmekawi@ge.com; hadi.elme@ge.com; emily.brooker@ge.com;aisha.anwar@ge.com";  
 
-         steps {
-
-      checkout(
-
-[$class: 'GitSCM', branches: [
-					[name: '*/master']],
-					doGenerateSubmoduleConfigurations: false, 
-					extensions: [], 
-					submoduleCfg: [], 
-					userRemoteConfigs: [
-					[credentialsId: '83ce4725-8966-455e-b7d5-47c6a4a5222b', 
-					url: 'https://github.com/20chix/CIW17']]])
-    
-    
-emailext body: 'dwdwdw', subject: 'dwdwd', to: 'hadi20107@hotmail.co.uk' 
-
-
+        }
     }
-    }
+
+
   }
 
       post {
         always {
            // archiveArtifacts artifacts: 'build/libs/**/*.jar', fingerprint: true
             junit 'target//surefire-reports/*.xml'
+
+            recordIssues enabledForFailure: true, tools: [mavenConsole(), java(), javaDoc()]
+
+
+
         }
     }
 
 
 }
+
