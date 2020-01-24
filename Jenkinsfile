@@ -45,7 +45,7 @@ pipeline {
             mimeType: 'text/html', 
             replyTo: '', 
             subject: "EDISON CI W17 : JOB Name -> ${env.JOB_NAME}", 
-            to: "hadi.elmekawi@ge.com; hadi.elme@ge.com; emily.brooker@ge.com;aisha.anwar@ge.com";  
+            to: "hadi.elme92@gmail.com";  
 
         }
     }
