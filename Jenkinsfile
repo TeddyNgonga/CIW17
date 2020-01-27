@@ -6,18 +6,30 @@ pipeline {
 				
     stage('Maven: clean project') {
               steps {
-			bat """ 
+						bat """ 
 
-				echo Hello world
+				mvn clean
                 
                 """
               }
     }
+	stage('Maven: package project') {
+              steps {
+				bat """
 
+				mvn package
+                
+                """
+              }
+    }
+	stage('Maven: test project') {
+              steps {
+				bat """
 
+				mvn test
+                
+                """
+              }
+    }
   }
-
-
-
 }
-
