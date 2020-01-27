@@ -1,5 +1,3 @@
-package com.hadi;
-
 import static org.junit.Assert.*;
 import static org.junit.Assume.*;
 
@@ -21,6 +19,8 @@ public class TestFibonacciTheory
 	{
 		assumeTrue(n <= 1); // ignores values > 1
 		assertEquals(n, Fibonacci.calculate(n));
+
+		
 	}
 
 	@Theory

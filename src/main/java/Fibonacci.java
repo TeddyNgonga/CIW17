@@ -1,5 +1,3 @@
-package com.hadi;
-
 public class Fibonacci
 {
 	
