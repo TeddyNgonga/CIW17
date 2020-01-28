@@ -6,9 +6,7 @@ pipeline {
 				
     stage('Maven: clean project') {
               steps {
-						bat """ 
-
-				mvn install
+						bat """ "HelloWrold"
                 
                 """
               }
