@@ -1,12 +1,11 @@
 pipeline {
   agent any 
 
-  stages {
-					
+  stages {					
 				
     stage('Maven: clean project') {
               steps {
-						bat """ "HelloWrold"
+						bat """ echo HelloWrold
                 
                 """
               }
